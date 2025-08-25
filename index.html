@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EVSAND — Affordable, Resilient Heat for Canadian Homes</title>
+  <meta name="description" content="EVSAND thermal battery: Heat your home for as little as $3/day with 50%+ savings. 110,000 BTU (35 kWh) storage, Nova Scotia–made, CSA pathway, NSERC evaluation in progress." />
+  <meta name="theme-color" content="#1848B5" />
+  <meta property="og:title" content="EVSAND — Affordable, Resilient Heat for Canadian Homes" />
+  <meta property="og:description" content="Heat your home for as little as $3/day with 50%+ savings. Nova Scotia–made thermal battery with 110,000 BTU storage." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=EVSAND" />
+  <meta property="og:url" content="https://your-gh-username.github.io/evsand" />
+  <style>
+    /* -----------------------------
+       EVSAND Single-File Site (GitHub Pages-ready)
+       Bright, bold, modern. Blue/white with deep navy & warm energy accent.
+       No green hues.
+       ----------------------------- */
+
+    /* CSS Reset (minified-ish) */
+    *,*::before,*::after{box-sizing:border-box}html,body{margin:0;padding:0}img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}button{font:inherit}
+
+    :root{
+      /* Palette */
+      --bg: #F3F8FD;            /* page background (cool white) */
+      --surface: #FFFFFF;       /* cards/nav */
+      --navy: #2C3967;          /* headings, anchors */
+      --text: #0F2233;          /* body text */
+      --link: #0097FF;          /* links */
+      --primary: #1848B5;       /* primary buttons, key accents */
+      --accent: #F0964A;        /* energy/heat accent (sparingly) */
+      --muted: #D6E3EE;         /* borders/dividers */
+      --chip: #E6F2FF;          /* chips/badges */
+      --ok-contrast: #223052;   /* heading hover/strong */
+
+      /* Layout */
+      --maxw: 1120px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(28, 64, 120, 0.12);
+    }
+
+    html{scroll-behavior:smooth}
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background:var(--bg); color:var(--text); line-height:1.5}
+    .container{max-width:var(--maxw); margin-inline:auto; padding: clamp(16px, 4vw, 32px)}
+
+    /* Nav */
+    .nav{position:sticky; top:0; z-index:30; background:var(--surface); border-bottom:1px solid var(--muted)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; color:var(--navy)}
+    .brand-badge{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),#2BA3FF)}
+    .nav-links{display:flex; gap:20px; flex-wrap:wrap}
+    .nav a{color:var(--navy); font-weight:600}
+    .nav a:hover{color:var(--ok-contrast)}
+    .nav-cta{padding:10px 16px; background:var(--primary); color:#fff; border-radius:10px; box-shadow:var(--shadow)}
+    .nav-cta:hover{filter:brightness(0.95)}
+
+    /* Hero */
+    .hero{background: radial-gradient(1200px 600px at 85% -10%, #EAF2FB 0%, rgba(234,242,251,0) 60%), var(--bg);}
+    .hero-inner{display:grid; grid-template-columns: 1.2fr 1fr; gap: clamp(20px,4vw,40px); align-items:center}
+    .eyebrow{font-weight:700; color:var(--primary); letter-spacing:.06em; text-transform:uppercase}
+    h1{font-size:clamp(28px,4vw,48px); color:var(--navy); line-height:1.15; margin:10px 0 16px}
+    .lede{font-size:clamp(16px,2.2vw,19px); color:var(--text); opacity:.95}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:12px; font-weight:700}
+    .btn-primary{background:var(--primary); color:#fff}
+    .btn-primary:hover{filter:brightness(0.95)}
+    .btn-ghost{border:2px solid var(--navy); color:var(--navy); background:transparent}
+    .btn-ghost:hover{background:#EEF4FB}
+    .hero-card{background:var(--surface); border:1px solid var(--muted); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .metric{display:grid; grid-template-columns: auto 1fr; gap:8px 14px; align-items:center}
+    .metric .k{font-weight:800; color:var(--navy); font-size:22px}
+    .metric .v{color:var(--text)}
+
+    /* Sections */
+    section{padding: clamp(32px, 8vw, 80px) 0}
+    .section-title{font-size: clamp(22px, 3vw, 34px); color:var(--navy); margin:0 0 16px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
+    .card{background:var(--surface); border:1px solid var(--muted); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+    .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:var(--chip); color:var(--navy); font-weight:700; font-size:12px}
+    .specs{display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px}
+    .spec{padding:14px; border:1px dashed var(--muted); border-radius:12px; background:#FAFCFF}
+    .spec strong{color:var(--navy)}
+    .list{display:grid; gap:10px}
+    .list li{display:flex; gap:10px}
+    .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); margin-top:8px}
+
+    /* Table */
+    table{width:100%; border-collapse:collapse; border:1px solid var(--muted); background:var(--surface); border-radius:var(--radius); overflow:hidden}
+    th,td{padding:14px 16px; border-bottom:1px solid var(--muted); text-align:left}
+    th{background:#F7FAFF; color:var(--navy)}
+
+    /* Footer */
+    footer{background:var(--bg); border-top:1px solid var(--muted); color:var(--text)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .specs{grid-template-columns:1fr}
+    }
+  </style>
+  <script>
+    // Minimal JS for mobile nav toggle (optional extension)
+    function to(e){document.querySelector(e)?.scrollIntoView({behavior:'smooth'})}
+  </script>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand" onclick="to('#top')" style="cursor:pointer">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <span>EVSAND</span>
+      </div>
+      <div class="nav-links">
+        <a href="#product">Product</a>
+        <a href="#specs">Specs</a>
+        <a href="#team">Team</a>
+        <a href="#cred">Credibility</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Request Info</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Nova Scotia–made thermal battery</div>
+        <h1>Heat your home for as little as $3/day — cut heating costs by 50%+</h1>
+        <p class="lede">EVSAND is a residential thermal battery that stores heat off‑peak and delivers it when you need it. Built for Canadian winters, designed and assembled in Nova Scotia.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#product">See how it works</a>
+          <a class="btn btn-ghost" href="#contact">Request pilot info</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="metric">
+          <div class="k">110,000 BTU</div>
+          <div class="v">35 kWh thermal storage capacity</div>
+          <div class="k">~6 hours</div>
+          <div class="v">Typical charge time (off‑peak)</div>
+          <div class="k">Outage ready</div>
+          <div class="v">Stored heat for resilience</div>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+          <span class="badge">Made in Nova Scotia</span>
+          <span class="badge">NSERC evaluation in progress</span>
+          <span class="badge">CSA certification pathway</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product -->
+  <section id="product">
+    <div class="container">
+      <h2 class="section-title">A smarter way to heat: store off‑peak, release on‑demand</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Thermal battery core</h3>
+          <p>Engineered storage medium in a steel drum, optimized for high energy density and safe residential operation.</p>
+        </div>
+        <div class="card">
+          <h3>Appliance‑grade enclosure</h3>
+          <p>Rectangular steel housing with analog control interface — a familiar, reliable feel for the home.</p>
+        </div>
+        <div class="card">
+          <h3>Air mixing & delivery</h3>
+          <p>Three cold‑air inlets, a high‑efficiency mixer, and a heated‑air outlet deliver comfortable heat when you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section id="specs">
+    <div class="container">
+      <h2 class="section-title">Technical specs</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="specs">
+            <div class="spec"><strong>Storage</strong><br>110,000 BTU (35 kWh)</div>
+            <div class="spec"><strong>Form factor</strong><br>Approx. 28" Ø × 48" H core in appliance enclosure</div>
+            <div class="spec"><strong>Charge time</strong><br>~6 hours (off‑peak)</div>
+            <div class="spec"><strong>Resilience</strong><br>Delivers heat during power interruptions</div>
+            <div class="spec"><strong>Compatibility</strong><br>Solar‑ready integration path</div>
+            <div class="spec"><strong>Compliance</strong><br>CSA certification path defined</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Why it saves money</h3>
+          <ul class="list">
+            <li><span class="dot"></span><div>Shift energy usage to off‑peak pricing and store for later.</div></li>
+            <li><span class="dot"></span><div>Reduce reliance on expensive, inefficient legacy heat sources.</div></li>
+            <li><span class="dot"></span><div>Tight thermal losses via optimized insulation and air path.</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section id="cred">
+    <div class="container">
+      <h2 class="section-title">Funding & credibility</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Recent milestones</h3>
+          <table>
+            <thead><tr><th>Item</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>ACOA funding</td><td>Grant secured (Aug 2025)</td></tr>
+              <tr><td>NSERC</td><td>Evaluation in progress</td></tr>
+              <tr><td>Engineering partner</td><td>Clear Path Engineering engaged</td></tr>
+              <tr><td>Manufacturing</td><td>Danby joint venture under exploration</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Compliance note</h3>
+          <p>EVSAND images and specs represent current engineering intent. CSA/UL certification badges will be displayed once approvals are complete.</p>
+          <p style="font-size:14px;opacity:.8">This page is for presentation purposes and may include forward‑looking statements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <div class="container">
+      <h2 class="section-title">Leadership</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Derrick Welsh — Founder</h3>
+          <p>Green energy innovator with patents and deep experience in residential energy systems.</p>
+        </div>
+        <div class="card">
+          <h3>Tim Moore — CEO</h3>
+          <p>Former Fortune 500 operator (CLOROX, BRITA) with $1B+ portfolio experience.</p>
+        </div>
+        <div class="card">
+          <h3>Advisory Board</h3>
+          <p>Industry experts spanning electrical, HVAC, and renewable energy manufacturing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>For homeowners & pilots</h3>
+          <p>Interested in early access or pilot programs in Nova Scotia? We’re building a list.</p>
+          <p><a class="btn btn-primary" href="mailto:info@evsand.ca?subject=EVSAND%20Pilot%20Inquiry">Email: info@evsand.ca</a></p>
+        </div>
+        <div class="card">
+          <h3>For investors & partners</h3>
+          <p>Exploring manufacturing partnerships and growth capital aligned to Canadian clean energy.</p>
+          <p><a class="btn btn-ghost" href="mailto:partners@evsand.ca?subject=EVSAND%20Partnership">Email: partners@evsand.ca</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap">
+      <div>© <span id="year"></span> EVSAND • Made in Nova Scotia</div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <a href="#top" style="color:var(--link)">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!--
+    GitHub Pages: Quick Deploy
+    1) Create a new repository named: evsand-website (Recommended)
+    2) Add this file as index.html at the repo root.
+    3) Commit & push. In Settings → Pages → Set Source: Deploy from branch (main), /root.
+    4) Your site will appear at https://USERNAME.github.io/evsand-website/
+
+    Optional enhancements:
+    - Replace placeholder OG image with a product render.
+    - Add analytics by injecting your script in <head>.
+    - If you need a form without a backend, use Formspree or EmailJS.
+  -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EVSAND",
+    "url": "https://your-gh-username.github.io/evsand-website/",
+    "logo": "https://your-gh-username.github.io/evsand-website/icon.png",
+    "sameAs": [],
+    "description": "Nova Scotia–made residential thermal battery providing affordable, resilient heat.",
+    "foundingLocation": "Nova Scotia, Canada"
+  }
+  </script>
+</body>
+</html>
