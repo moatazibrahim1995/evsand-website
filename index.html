@@ -14,25 +14,29 @@
   <style>
     /* -----------------------------
        EVSAND Single-File Site (GitHub Pages-ready)
-       Bright, bold, modern. Blue/white with deep navy & warm energy accent.
-       No green hues.
+       Bright, bold, modern. Blue/white base with fresh eco-green accents.
        ----------------------------- */
 
     /* CSS Reset (minified-ish) */
     *,*::before,*::after{box-sizing:border-box}html,body{margin:0;padding:0}img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}button{font:inherit}
 
     :root{
-      /* Palette */
+      /* Core Palette */
       --bg: #F3F8FD;            /* page background (cool white) */
       --surface: #FFFFFF;       /* cards/nav */
       --navy: #2C3967;          /* headings, anchors */
       --text: #0F2233;          /* body text */
       --link: #0097FF;          /* links */
-      --primary: #1848B5;       /* primary buttons, key accents */
+      --primary: #1848B5;       /* primary buttons, key accents (blue) */
       --accent: #F0964A;        /* energy/heat accent (sparingly) */
       --muted: #D6E3EE;         /* borders/dividers */
       --chip: #E6F2FF;          /* chips/badges */
       --ok-contrast: #223052;   /* heading hover/strong */
+
+      /* Eco Green accents (new) */
+      --eco: #22C55E;           /* clean eco green */
+      --eco-deep: #18864A;      /* deep green for text/borders */
+      --eco-soft: #EAF8F0;      /* soft green backgrounds */
 
       /* Layout */
       --maxw: 1120px;
@@ -48,7 +52,7 @@
     .nav{position:sticky; top:0; z-index:30; background:var(--surface); border-bottom:1px solid var(--muted)}
     .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{display:flex; align-items:center; gap:12px; font-weight:700; color:var(--navy)}
-    .brand-badge{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),#2BA3FF)}
+    .brand-badge{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--eco))}
     .nav-links{display:flex; gap:20px; flex-wrap:wrap}
     .nav a{color:var(--navy); font-weight:600}
     .nav a:hover{color:var(--ok-contrast)}
@@ -56,9 +60,9 @@
     .nav-cta:hover{filter:brightness(0.95)}
 
     /* Hero */
-    .hero{background: radial-gradient(1200px 600px at 85% -10%, #EAF2FB 0%, rgba(234,242,251,0) 60%), var(--bg);}
+    .hero{background: radial-gradient(1200px 600px at 85% -10%, #EAF2FB 0%, rgba(234,242,251,0) 60%), var(--bg);}    
     .hero-inner{display:grid; grid-template-columns: 1.2fr 1fr; gap: clamp(20px,4vw,40px); align-items:center}
-    .eyebrow{font-weight:700; color:var(--primary); letter-spacing:.06em; text-transform:uppercase}
+    .eyebrow{font-weight:800; color:var(--eco); letter-spacing:.06em; text-transform:uppercase}
     h1{font-size:clamp(28px,4vw,48px); color:var(--navy); line-height:1.15; margin:10px 0 16px}
     .lede{font-size:clamp(16px,2.2vw,19px); color:var(--text); opacity:.95}
     .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
@@ -67,6 +71,9 @@
     .btn-primary:hover{filter:brightness(0.95)}
     .btn-ghost{border:2px solid var(--navy); color:var(--navy); background:transparent}
     .btn-ghost:hover{background:#EEF4FB}
+    .btn-eco{background:var(--eco); color:#fff}
+    .btn-eco:hover{filter:brightness(0.96)}
+
     .hero-card{background:var(--surface); border:1px solid var(--muted); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
     .metric{display:grid; grid-template-columns: auto 1fr; gap:8px 14px; align-items:center}
     .metric .k{font-weight:800; color:var(--navy); font-size:22px}
@@ -78,13 +85,16 @@
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
     .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
     .card{background:var(--surface); border:1px solid var(--muted); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+
     .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:var(--chip); color:var(--navy); font-weight:700; font-size:12px}
+    .badge-eco{background:var(--eco-soft); color:var(--eco-deep); border:1px solid rgba(24,134,74,.15)}
+
     .specs{display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px}
     .spec{padding:14px; border:1px dashed var(--muted); border-radius:12px; background:#FAFCFF}
     .spec strong{color:var(--navy)}
     .list{display:grid; gap:10px}
     .list li{display:flex; gap:10px}
-    .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); margin-top:8px}
+    .dot{width:10px; height:10px; border-radius:50%; background:var(--eco); margin-top:8px}
 
     /* Table */
     table{width:100%; border-collapse:collapse; border:1px solid var(--muted); background:var(--surface); border-radius:var(--radius); overflow:hidden}
@@ -135,7 +145,7 @@
         <p class="lede">EVSAND is a residential thermal battery that stores heat off‑peak and delivers it when you need it. Built for Canadian winters, designed and assembled in Nova Scotia.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#product">See how it works</a>
-          <a class="btn btn-ghost" href="#contact">Request pilot info</a>
+          <a class="btn btn-eco" href="#contact">Request pilot info</a>
         </div>
       </div>
       <div class="hero-card">
@@ -150,7 +160,7 @@
         <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
           <span class="badge">Made in Nova Scotia</span>
           <span class="badge">NSERC evaluation in progress</span>
-          <span class="badge">CSA certification pathway</span>
+          <span class="badge badge-eco">CSA certification pathway</span>
         </div>
       </div>
     </div>
@@ -264,7 +274,7 @@
         <div class="card">
           <h3>For investors & partners</h3>
           <p>Exploring manufacturing partnerships and growth capital aligned to Canadian clean energy.</p>
-          <p><a class="btn btn-ghost" href="mailto:partners@evsand.ca?subject=EVSAND%20Partnership">Email: partners@evsand.ca</a></p>
+          <p><a class="btn btn-eco" href="mailto:partners@evsand.ca?subject=EVSAND%20Partnership">Email: partners@evsand.ca</a></p>
         </div>
       </div>
     </div>
