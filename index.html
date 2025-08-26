@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EVSAND — Affordable, Resilient Heat for Canadian Homes</title>
   <meta name="description" content="EVSAND thermal battery: Heat your home for as little as $3/day with 50%+ savings. 110,000 BTU (35 kWh) storage, Nova Scotia–made, CSA pathway, NSERC evaluation in progress." />
-  <meta name="theme-color" content="#1848B5" />
+  <meta name="theme-color" content="#22C55E" />
   <meta property="og:title" content="EVSAND — Affordable, Resilient Heat for Canadian Homes" />
   <meta property="og:description" content="Heat your home for as little as $3/day with 50%+ savings. Nova Scotia–made thermal battery with 110,000 BTU storage." />
   <meta property="og:type" content="website" />
@@ -14,7 +14,7 @@
   <style>
     /* -----------------------------
        EVSAND Single-File Site (GitHub Pages-ready)
-       Bright, bold, modern. Blue/white base with fresh eco- accents.
+       Blue/white base with unmistakable eco-green accents.
        ----------------------------- */
 
     /* CSS Reset (minified-ish) */
@@ -27,16 +27,16 @@
       --navy: #2C3967;          /* headings, anchors */
       --text: #0F2233;          /* body text */
       --link: #0097FF;          /* links */
-      --primary: #1848B5;       /* primary buttons, key accents (blue) */
+      --primary: #1848B5;       /* primary blue (still used selectively) */
       --accent: #F0964A;        /* energy/heat accent (sparingly) */
       --muted: #D6E3EE;         /* borders/dividers */
       --chip: #E6F2FF;          /* chips/badges */
       --ok-contrast: #223052;   /* heading hover/strong */
 
-      /* Eco  accents (new) */
-      --eco: #22C55E;           /* clean eco  */
-      --eco-deep: #18864A;      /* deep  for text/borders */
-      --eco-soft: #EAF8F0;      /* soft  backgrounds */
+      /* Eco Green accents */
+      --eco: #22C55E;           /* clean eco green */
+      --eco-deep: #18864A;      /* deep green for text/borders */
+      --eco-soft: #EAF8F0;      /* soft green backgrounds */
 
       /* Layout */
       --maxw: 1120px;
@@ -49,18 +49,18 @@
     .container{max-width:var(--maxw); margin-inline:auto; padding: clamp(16px, 4vw, 32px)}
 
     /* Nav */
-    .nav{position:sticky; top:0; z-index:30; background:var(--surface); border-bottom:1px solid var(--muted)}
+    .nav{position:sticky; top:0; z-index:30; background:var(--surface); border-bottom:2px solid var(--eco)}
     .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{display:flex; align-items:center; gap:12px; font-weight:700; color:var(--navy)}
     .brand-badge{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--eco))}
     .nav-links{display:flex; gap:20px; flex-wrap:wrap}
     .nav a{color:var(--navy); font-weight:600}
     .nav a:hover{color:var(--ok-contrast)}
-    .nav-cta{padding:10px 16px; background:var(--primary); color:#fff; border-radius:10px; box-shadow:var(--shadow)}
-    .nav-cta:hover{filter:brightness(0.95)}
+    .nav-cta{padding:10px 16px; background:var(--eco); color:#fff; border-radius:10px; box-shadow:var(--shadow)}
+    .nav-cta:hover{filter:brightness(0.96)}
 
     /* Hero */
-    .hero{background: radial-gradient(1200px 600px at 85% -10%, #EAF2FB 0%, rgba(234,242,251,0) 60%), var(--bg);}    
+    .hero{background: radial-gradient(1200px 600px at 85% -10%, #EAF2FB 0%, rgba(234,242,251,0) 60%), radial-gradient(800px 240px at 10% 110%, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0) 70%), var(--bg);}    
     .hero-inner{display:grid; grid-template-columns: 1.2fr 1fr; gap: clamp(20px,4vw,40px); align-items:center}
     .eyebrow{font-weight:800; color:var(--eco); letter-spacing:.06em; text-transform:uppercase}
     h1{font-size:clamp(28px,4vw,48px); color:var(--navy); line-height:1.15; margin:10px 0 16px}
@@ -81,7 +81,8 @@
 
     /* Sections */
     section{padding: clamp(32px, 8vw, 80px) 0}
-    .section-title{font-size: clamp(22px, 3vw, 34px); color:var(--navy); margin:0 0 16px}
+    .section-title{font-size: clamp(22px, 3vw, 34px); color:var(--navy); margin:0 0 16px; position:relative}
+    .section-title::after{content:"";display:block;width:56px;height:4px;background:var(--eco);border-radius:999px;margin-top:8px}
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
     .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
     .card{background:var(--surface); border:1px solid var(--muted); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
@@ -144,8 +145,8 @@
         <h1>Heat your home for as little as $3/day — cut heating costs by 50%+</h1>
         <p class="lede">EVSAND is a residential thermal battery that stores heat off‑peak and delivers it when you need it. Built for Canadian winters, designed and assembled in Nova Scotia.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#product">See how it works</a>
-          <a class="btn btn-eco" href="#contact">Request pilot info</a>
+          <a class="btn btn-eco" href="#product">See how it works</a>
+          <a class="btn btn-ghost" href="#contact">Request pilot info</a>
         </div>
       </div>
       <div class="hero-card">
@@ -158,8 +159,8 @@
           <div class="v">Stored heat for resilience</div>
         </div>
         <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-          <span class="badge">Made in Nova Scotia</span>
-          <span class="badge">NSERC evaluation in progress</span>
+          <span class="badge badge-eco">Made in Nova Scotia</span>
+          <span class="badge badge-eco">NSERC evaluation in progress</span>
           <span class="badge badge-eco">CSA certification pathway</span>
         </div>
       </div>
@@ -195,7 +196,7 @@
         <div class="card">
           <div class="specs">
             <div class="spec"><strong>Storage</strong><br>110,000 BTU (35 kWh)</div>
-            <div class="spec"><strong>Form factor</strong><br>Approx. 28" Ø × 48" H core in appliance enclosure</div>
+            <div class="spec"><strong>Form factor</strong><br>Approx. 28&quot; Ø × 48&quot; H core in appliance enclosure</div>
             <div class="spec"><strong>Charge time</strong><br>~6 hours (off‑peak)</div>
             <div class="spec"><strong>Resilience</strong><br>Delivers heat during power interruptions</div>
             <div class="spec"><strong>Compatibility</strong><br>Solar‑ready integration path</div>
@@ -247,7 +248,7 @@
       <div class="grid-3">
         <div class="card">
           <h3>Derrick Welsh — Founder</h3>
-          <p> energy innovator with patents and deep experience in residential energy systems.</p>
+          <p>Green energy innovator with patents and deep experience in residential energy systems.</p>
         </div>
         <div class="card">
           <h3>Tim Moore — CEO</h3>
@@ -269,7 +270,7 @@
         <div class="card">
           <h3>For homeowners & pilots</h3>
           <p>Interested in early access or pilot programs in Nova Scotia? We’re building a list.</p>
-          <p><a class="btn btn-primary" href="mailto:info@evsand.ca?subject=EVSAND%20Pilot%20Inquiry">Email: info@evsand.ca</a></p>
+          <p><a class="btn btn-eco" href="mailto:info@evsand.ca?subject=EVSAND%20Pilot%20Inquiry">Email: info@evsand.ca</a></p>
         </div>
         <div class="card">
           <h3>For investors & partners</h3>
